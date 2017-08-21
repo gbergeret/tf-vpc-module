@@ -9,15 +9,9 @@ AWS VPC module to test terraform modules.
 
 ### Sample
 ```hcl
-provider "aws" {
-  region = "${var.aws_region}"
-}
-
 module "consul" {
   source = "github.com/gbergere/tf-vpc-test-module"
 }
-
-variable "aws_region" {}
 ```
 
 ## Used by
