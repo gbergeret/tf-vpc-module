@@ -15,11 +15,10 @@ provider "aws" {
 
 module "consul" {
   source = "github.com/gbergere/tf-vpc-test-module"
-
-  name_prefix = "${var.name_prefix}"
 }
 
 variable "aws_region" {}
-
-variable "name_prefix" {}
 ```
+
+## Used by
+* [tf-consul-module](https://github.com/gbergere/tf-consul-module)
