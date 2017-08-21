@@ -1,0 +1,25 @@
+---
+driver:
+  name: terraform
+
+provisioner:
+  name: terraform
+
+platforms:
+  - name: coreos
+
+transport:
+  ssh_key: ~/.ssh/id_rsa
+
+verifier:
+  name: terraform
+  format: doc
+  groups:
+    - name: default
+      controls:
+        - internet_access
+      hostnames: instance_ip
+      username: core
+
+suites:
+  - name: default
