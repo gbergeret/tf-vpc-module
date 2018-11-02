@@ -1,7 +1,5 @@
-resource "aws_security_group" "test" {
-  vpc_id      = "${aws_vpc.test.id}"
-  name_prefix = "${var.name_prefix}"
-  description = "Security group used to test with Test VPC"
+resource "aws_default_security_group" "d" {
+  vpc_id = "${aws_vpc.v.id}"
 
   ingress {
     from_port   = -1
