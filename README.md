@@ -1,6 +1,6 @@
-# VPC Test Module
+# VPC Module
 
-AWS VPC module to test terraform modules.
+AWS VPC module to create VPCs in AWS.
 
 ## How To Use
 
@@ -10,7 +10,7 @@ AWS VPC module to test terraform modules.
 ### Sample
 ```hcl
 module "consul" {
-  source = "github.com/gbergere/tf-vpc-test-module"
+  source = "github.com/gbergere/tf-vpc-module"
 }
 ```
 
