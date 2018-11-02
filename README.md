@@ -5,11 +5,11 @@ AWS VPC module to create VPCs in AWS.
 ## How To Use
 
 ### Parameters
-`name_prefix`: String (optional, default: `tf-test-`)
+`name_prefix`: String (optional, default: `tf-`)
 
 ### Sample
 ```hcl
-module "consul" {
+module "vpc" {
   source = "github.com/gbergere/tf-vpc-module"
 }
 ```

@@ -3,7 +3,7 @@ locals {
 }
 
 module "vpc" {
-  source = "../"
+  source = "../../../"
 
   name_prefix = "${local.name_prefix}"
 }
@@ -24,7 +24,7 @@ data "aws_ami" "core" {
 }
 
 resource "aws_key_pair" "k" {
-  key_name_prefix = "${local.name_prefix}keypair"
+  key_name_prefix = "${local.name_prefix}keypair-"
   public_key      = "${file("~/.ssh/id_rsa.pub")}"
 }
 
@@ -34,9 +34,7 @@ resource "aws_instance" "i" {
   subnet_id     = "${module.vpc.subnet_id}"
   key_name      = "${aws_key_pair.k.key_name}"
 
-  vpc_security_group_ids = [
-    "${module.vpc.security_group}",
-  ]
+  vpc_security_group_ids = ["${module.vpc.security_group}"]
 
   tags {
     Name = "${local.name_prefix}instance"
