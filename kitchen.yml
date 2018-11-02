@@ -1,0 +1,25 @@
+---
+driver:
+  name: terraform
+  root_module_directory: test/fixtures/wrapper
+
+provisioner:
+  name: terraform
+
+verifier:
+  name: terraform
+
+platforms:
+  - name: coreos
+    verifier:
+      systems:
+        - name: remote
+          backend: ssh
+          controls:
+            - internet_access
+            - operating_system
+          hosts_output: instance_ip
+          user: core
+
+suites:
+  - name: default
