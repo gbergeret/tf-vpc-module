@@ -1,15 +1,11 @@
 output "vpc_id" {
-  value = "${aws_vpc.test.id}"
+  value = "${aws_vpc.v.id}"
 }
 
 output "subnet_id" {
-  value = "${aws_subnet.test.id}"
-}
-
-output "key_name" {
-  value = "${aws_key_pair.test.key_name}"
+  value = "${aws_subnet.s.id}"
 }
 
 output "security_group" {
-  value = "${aws_security_group.test.id}"
+  value = "${aws_default_security_group.d.id}"
 }
