@@ -11,7 +11,7 @@ AWS VPC module to create a basic VPCs with 1 public subnet in AWS.
 ### Outputs
 * `vpc_id`: String 
 * `subnet_id`: String
-* `security_group`: String
+* `default_security_group`: String
 
 ### Example
 ```hcl
