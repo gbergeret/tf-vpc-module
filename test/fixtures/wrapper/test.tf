@@ -34,7 +34,7 @@ resource "aws_instance" "i" {
   subnet_id     = "${module.vpc.subnet_id}"
   key_name      = "${aws_key_pair.k.key_name}"
 
-  vpc_security_group_ids = ["${module.vpc.security_group}"]
+  vpc_security_group_ids = ["${module.vpc.default_security_group}"]
 
   tags {
     Name = "${local.name_prefix}instance"
