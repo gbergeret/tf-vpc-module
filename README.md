@@ -1,6 +1,6 @@
 # VPC Module
 
-AWS VPC module to create a basic VPCs with 1 public subnet in AWS.
+AWS VPC module to create a basic VPCs with 1 public subnet per AZ in AWS.
 
 ## How To Use
 
@@ -10,8 +10,9 @@ AWS VPC module to create a basic VPCs with 1 public subnet in AWS.
 
 ### Outputs
 * `vpc_id`: String 
-* `subnet_id`: String
 * `default_security_group`: String
+* `subnets`: Map[List]: List of subnet ids per tier (_public_)
+* `cidr_blocks`: Map[List]: List of CIDR blocks per tier (_vpc_, _public_)
 
 ### Example
 ```hcl
