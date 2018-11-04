@@ -28,10 +28,15 @@ resource "aws_key_pair" "k" {
   public_key      = "${file("~/.ssh/id_rsa.pub")}"
 }
 
+resource "random_integer" "az" {
+  min = 0
+  max = "${length(module.vpc.subnets["public"]) - 1}" # -1 as the max value is inclusive
+}
+
 resource "aws_instance" "i" {
   instance_type = "t2.micro"
   ami           = "${data.aws_ami.core.id}"
-  subnet_id     = "${module.vpc.subnet_id}"
+  subnet_id     = "${element(module.vpc.subnets["public"], random_integer.az.result)}"
   key_name      = "${aws_key_pair.k.key_name}"
 
   vpc_security_group_ids = ["${module.vpc.default_security_group}"]
