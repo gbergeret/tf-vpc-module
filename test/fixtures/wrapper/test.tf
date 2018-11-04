@@ -34,7 +34,7 @@ resource "random_integer" "az" {
 }
 
 resource "aws_instance" "i" {
-  instance_type = "t2.micro"
+  instance_type = "t3.nano"
   ami           = "${data.aws_ami.core.id}"
   subnet_id     = "${element(module.vpc.subnets["public"], random_integer.az.result)}"
   key_name      = "${aws_key_pair.k.key_name}"
