@@ -5,7 +5,7 @@ control "operating_system" do
     end
 
     it "is CoreOS" do
-      is_expected.to match /CoreOS/
+      is_expected.to match (/CoreOS/)
     end
   end
 end
