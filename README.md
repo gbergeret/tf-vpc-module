@@ -26,4 +26,4 @@ module "vpc" {
 
 ## Used by
 
-* [tf-consul-module](https://github.com/gbergere/tf-consul-module)
+* [micro-service-as-code](https://github.com/gbergere/micro-service-as-code)
