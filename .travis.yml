@@ -19,10 +19,11 @@ before_script:
   - ssh-keygen -t rsa -b 4096 -N '' -f ~/.ssh/id_rsa
   - eval $(ssh-agent)
   - ssh-add ~/.ssh/id_rsa
-  - kitchen create
+  - bundle exec kitchen create
 
 script:
-  - kitchen verify
+  - bundle exec kitchen converge
+  - bundle exec kitchen verify
 
 after_script:
-  - kitchen destroy
+  - bundle exec kitchen destroy
