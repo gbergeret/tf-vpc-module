@@ -1,5 +1,5 @@
 locals {
-  "name_prefix" = "test-tf-vpc-module-"
+  name_prefix = "test-tf-vpc-module-"
 }
 
 module "vpc" {

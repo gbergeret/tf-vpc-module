@@ -10,7 +10,7 @@ verifier:
   name: terraform
 
 platforms:
-  - name: coreos
+  - name: aws
     verifier:
       systems:
         - name: remote
@@ -23,3 +23,7 @@ platforms:
 
 suites:
   - name: default
+    verifier:
+      name: awspec
+      patterns:
+        - test/integration/unit_tests/test_vpc.rb
