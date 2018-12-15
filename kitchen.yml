@@ -23,24 +23,7 @@ platforms:
             - operating_system
           hosts_output: instance_ip
           user: core
-          # @TODO Clean when this issue is fixed : https://github.com/newcontext-oss/kitchen-terraform/issues/301
-          bastion_host: "<%= `terraform output -state=test/fixtures/wrapper/terraform.tfstate.d/kitchen-terraform-default-case-1/terraform.tfstate bastion_ip || echo 1` %>"
-          bastion_user: core
-  - name: case_2
-    driver:
-      variables:
-        price_saving_enabled: "0"
-    verifier:
-      systems:
-        - name: remote
-          backend: ssh
-          controls:
-            - internet_access
-            - operating_system
-          hosts_output: instance_ip
-          user: core
-          # @TODO Clean when this issue is fixed : https://github.com/newcontext-oss/kitchen-terraform/issues/301
-          bastion_host: "<%= `terraform output -state=test/fixtures/wrapper/terraform.tfstate.d/kitchen-terraform-default-case-2/terraform.tfstate bastion_ip || echo 1` %>"
+          bastion_host_output: bastion_ip
           bastion_user: core
 
 suites:
